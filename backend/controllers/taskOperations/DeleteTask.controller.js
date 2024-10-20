@@ -1,6 +1,6 @@
 const IndividualTask = require('../../models/Task.model')
 async function DeleteTask(req,res) {
-    const taskId = req.params.id 
+    const taskId = req.params.taskId
     if(!taskId) {
         return res.status(400).send({message:'Invalid Task Id'})
     }

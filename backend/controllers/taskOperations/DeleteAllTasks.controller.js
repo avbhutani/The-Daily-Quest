@@ -12,7 +12,7 @@ async function DeleteAllTasks(req,res) {
         {await Tasks.deleteOne({username})
         await IndividualTask.deleteMany({username})
         res.status(200).send({message:"All Tasks for the particular user deleted."})}
-        else throw new error
+        else res.status(400).send({message:'No such Task Id Exist'})
     } catch (error) {
         res.status(500).send({error:error})
     }
